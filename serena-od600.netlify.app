@@ -149,9 +149,9 @@
                 if (cfu >= 1e6) {
                     const exponent = Math.floor(Math.log10(cfu));
                     const mantissa = cfu / Math.pow(10, exponent);
-                    resultText = `${mantissa.toFixed(2)} × 10<sup>${exponent}</sup> CFU/mL`;
+                    resultText = `${mantissa.toFixed(2)} × 10<sup>${exponent}</sup> CFU/gr`;
                 } else {
-                    resultText = `${cfu.toLocaleString()} CFU/mL`;
+                    resultText = `${cfu.toLocaleString()} CFU/gr`;
                 }
                 
                 resultDiv.innerHTML = `<strong>Risultato:</strong> ${resultText}`;
