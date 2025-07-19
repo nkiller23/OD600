@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OD600 a CFU/mL Calcolatore</title>
+    <title>OD600 a CFU/gr Calcolatore</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -81,7 +81,7 @@
 </div>
 
     <div class="container">
-        <h1>OD600 a CFU/mL Calculator</h1>
+        <h1>OD600 a CFU/gr Calculator</h1>
         
         <div class="form-group">
             <label for="od600">Valore OD600:</label>
@@ -111,7 +111,7 @@
 </select>
         </div>
         
-        <button id="calculate">Calcola CFU/mL</button>
+        <button id="calculate">Calcola CFU/gr</button>
         
         <div id="result" class="result"></div>
         
@@ -123,7 +123,7 @@
     </div>
 
     <footer>
-        <p>OD600 a CFU/mL Calculator &copy; 2025 | Giorgio Scarì - Dipartimento di Bioscienze - UNIMI</p>
+        <p>OD600 a CFU/gr Calculator &copy; 2025 | Giorgio Scarì - Dipartimento di Bioscienze - UNIMI info giorgio.scari@unimi.it</p>
     </footer>
 
     <script>
