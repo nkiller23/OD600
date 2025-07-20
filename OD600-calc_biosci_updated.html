@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OD600 a CFU/mL Calcolatore</title>
+    <title>OD600 a CFU/g Calcolatore</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -81,7 +81,7 @@
 </div>
 
     <div class="container">
-        <h1>OD600 a CFU/mL Calculator</h1>
+        <h1>OD600 a CFU/g Calculator</h1>
         
         <div class="form-group">
             <label for="od600">Valore OD600:</label>
@@ -96,34 +96,36 @@
         <div class="form-group">
             <label for="conversion-factor">Fattore di conversione:</label>
             <select id="conversion-factor" class="form-control">
-<option value="1.923076923076923e10" selected>1.9231 × 10<sup>10</sup></option>
-<option value="1e1">1 × 10<sup>1</sup></option>
-<option value="1e2">1 × 10<sup>2</sup></option>
-<option value="1e3">1 × 10<sup>3</sup></option>
-<option value="1e4">1 × 10<sup>4</sup></option>
-<option value="1e5">1 × 10<sup>5</sup></option>
-<option value="1e6">1 × 10<sup>6</sup></option>
-<option value="1e7">1 × 10<sup>7</sup></option>
-<option value="1e8">1 × 10<sup>8</sup></option>
-<option value="1e9">1 × 10<sup>9</sup></option>
-<option value="1e10">1 × 10<sup>10</sup></option>
-<option value="1e11">1 × 10<sup>11</sup></option>
+<option value="1.923076923076923e10" selected>1.9231 × 10<sup>^10</sup></option>
+<option value="1e1">1 × 10<sup>^1</sup></option>
+<option value="1e2">1 × 10<sup>^2</sup></option>
+<option value="1e3">1 × 10<sup>^3</sup></option>
+<option value="1e4">1 × 10<sup>^4</sup></option>
+<option value="1e5">1 × 10<sup>^5</sup></option>
+<option value="1e6">1 × 10<sup>^6</sup></option>
+<option value="1e7">1 × 10<sup>^7</sup></option>
+<option value="1e8">1 × 10<sup>^8</sup></option>
+<option value="1e9">1 × 10<sup>^9</sup></option>
+<option value="1e10">1 × 10<sup>^10</sup></option>
+<option value="1e11">1 × 10<sup>^11</sup></option>
 </select>
         </div>
         
-        <button id="calculate">Calcola CFU/mL</button>
+        <button id="calculate">Calcola CFU/g</button>
         
         <div id="result" class="result"></div>
         
         <div class="notes">
             <p><strong>Note:</strong></p>
-            <p>Il valore predefinito per il fattore di conversione di 5 × 10<sup>8</sup> CFU/mL è adatto per applicazioni standard. Per altri organismi o mezzi, potrebbe essere necessario utilizzare un fattore di conversione diverso.</p>
+            <p>Il valore predefinito per il fattore di conversione di 1 × 10<sup>^8</sup> CFU/g è adatto per applicazioni standard (<em>e.g. E.coli</em>)</p> 
+            <p>Per altri organismi o mezzi, <em>e.g. Bacillus sp.</em>, potrebbe essere necessario utilizzare un fattore di conversione diverso.</p>
             <p>Il percorso ottico standard è 1 cm, ma dovrebbe essere regolato in base alla configurazione dello spettrofotometro.</p>
+            <p>info: giorgio.scari@unimi.it</p>
         </div>
     </div>
 
     <footer>
-        <p>OD600 a CFU/mL Calculator &copy; 2025 | Giorgio Scarì - Dipartimento di Bioscienze - UNIMI</p>
+        <p>OD600 a CFU/g Calculator &copy; 2025 | Giorgio Scarì - Dipartimento di Bioscienze - UNIMI </p>
     </footer>
 
     <script>
@@ -149,9 +151,9 @@
                 if (cfu >= 1e6) {
                     const exponent = Math.floor(Math.log10(cfu));
                     const mantissa = cfu / Math.pow(10, exponent);
-                    resultText = `${mantissa.toFixed(2)} × 10<sup>${exponent}</sup> CFU/mL`;
+                    resultText = `${mantissa.toFixed(2)} × 10<sup>${exponent}</sup> CFU/g`;
                 } else {
-                    resultText = `${cfu.toLocaleString()} CFU/mL`;
+                    resultText = `${cfu.toLocaleString()} CFU/g`;
                 }
                 
                 resultDiv.innerHTML = `<strong>Risultato:</strong> ${resultText}`;
